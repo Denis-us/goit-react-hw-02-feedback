@@ -23,7 +23,9 @@ class App extends Component {
     const positiveFeedback = this.state.good;
     const negativeFeedback = this.state.neutral + this.state.bad;
 
-    return (positiveFeedback / (positiveFeedback + negativeFeedback)) * 100;
+    return Math.round(
+      (positiveFeedback / (positiveFeedback + negativeFeedback)) * 100
+    );
   };
 
   render() {
